@@ -1,0 +1,21 @@
+{
+  "name": "dr-delicacy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss styles/style.scss styles/css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "start": "npm run watch-css & python -m SimpleHTTPServer 8000"
+  },
+  "author": "Leonela Guzman",
+  "company": "amagazi, llc",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.3",
+    "normalize.css": "^8.0.0",
+    "npm": "^5.8.0"
+  }
+}
