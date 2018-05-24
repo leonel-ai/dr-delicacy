@@ -84,14 +84,15 @@ a.navbar-brand {
   padding-bottom: 60px;
   padding-top: 1em; }
 
+.home .desktop {
+  display: none; }
+
 .home .headline {
   height: 600px;
   background: url("/public/morel.png") no-repeat center center;
   background-size: cover; }
   .home .headline h1 {
-    padding-top: 14em;
-    padding-left: .25em;
-    padding-right: .25em; }
+    padding-top: 14em; }
   .home .headline p {
     text-align: center;
     padding-left: 3em;
@@ -113,7 +114,7 @@ a.navbar-brand {
   overflow-x: hidden; }
   .products h1 {
     font-size: 3em; }
-  .products .custard {
+  .products .deco1 {
     display: none; }
   .products .card-list {
     display: none; }
@@ -161,7 +162,7 @@ a.navbar-brand {
     display: block;
     margin: auto;
     background-color: #fff;
-    width: 20aem;
+    width: 20em;
     height: 28em;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -227,64 +228,165 @@ a.navbar-brand {
     position: fixed; }
   .carousel .slide {
     display: none; }
+  .container-fluid {
+    overflow-x: hidden; }
   /* start */
   .row {
     padding-bottom: 50px; }
-  .home .headline {
-    height: auto;
-    background: url("/public/shrooms.jpg") no-repeat center center;
-    background-size: cover; }
-    .home .headline h1 {
-      padding-top: 15%;
-      padding-left: 2em;
-      padding-right: 2em;
-      font-size: 2.5em; }
-    .home .headline p {
-      font-size: 1.2em; }
+    .row h1 {
+      text-align: left; }
+  .home {
+    padding-top: 0; }
+    .home .desktop {
+      display: block;
+      background: url("/public/herp.png") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      min-height: 400px;
+      width: 100%; }
+      .home .desktop h1 {
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 0;
+        font-size: 32px;
+        line-height: 32px;
+        width: 200px; }
+      .home .desktop p {
+        font-size: 16px;
+        line-height: 32px;
+        padding-left: 20px;
+        width: 300px; }
+    .home .headline {
+      display: none; }
+    .home .header-btns {
+      text-align: left; }
   /* products */
+  .row.products {
+    padding-top: 2em;
+    padding-bottom: 3em; }
   .products {
-    height: 1022px; }
+    overflow: hidden; }
     .products h1 {
-      text-align: left;
-      padding-left: 1em; }
-    .products .custard {
-      padding-right: 0;
-      margin-right: -46px;
-      height: 140px;
-      background-color: white; }
-      .products .custard img {
-        border-radius: 50%;
-        width: 50%;
-        float: right; }
-    .products .product-list {
+      padding-left: 1em;
+      font-size: 2em;
+      padding-bottom: 1em; }
+    .products .deco1 {
+      display: block;
       position: absolute;
-      padding-top: 10em; }
+      z-index: -2;
+      left: 380px;
+      margin-top: 76%;
+      animation-duration: 24s;
+      animation-name: spin;
+      animation-iteration-count: infinite;
+      animation-direction: alternate; }
+      .products .deco1 img {
+        width: 160px; }
+    .products .deco2 {
+      display: block;
+      position: absolute;
+      z-index: -2;
+      left: -320px;
+      margin-top: 100px;
+      animation-duration: 30s;
+      animation-name: spin;
+      animation-iteration-count: infinite;
+      animation-direction: alternate; }
+      .products .deco2 img {
+        width: 480px; }
+    .products .product-list {
+      position: initial;
+      padding-top: 2em; }
       .products .product-list p {
         max-width: 500px;
         padding-bottom: 2em; }
-    .products .carousel {
-      display: none; }
-    .products .card-list {
-      padding-bottom: 3em; }
+      .products .product-list .carousel {
+        height: auto; }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg); }
+    to {
+      transform: rotate(360deg); } }
+  @-moz-keyframes spin {
+    from {
+      -moz-transform: rotate(0deg); }
+    to {
+      -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin {
+    from {
+      -webkit-transform: rotate(0deg); }
+    to {
+      -webkit-transform: rotate(360deg); } }
   /* story */
-  .story {
-    padding-top: 5em; }
-    .story h1 {
+  .row.story {
+    padding-top: 8em;
+    padding-bottom: 8em; }
+    .row.story .main {
+      font-size: 2em;
+      margin-bottom: 1em; }
+    .row.story h1 {
       text-align: left;
       padding: 0 1em; }
+    .row.story .card {
+      display: block;
+      margin: auto;
+      background-color: #fff;
+      width: 32em;
+      height: 29em;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 0; }
+      .row.story .card h1 {
+        text-align: left;
+        padding-left: .7em; }
+      .row.story .card p {
+        padding: 1em; }
+      .row.story .card .chef-video {
+        padding-bottom: 2em;
+        padding-left: 0;
+        padding-right: 0; }
   /* contact */
   .contact {
     height: 400px;
     padding-top: 5em; }
     .contact h1 {
-      padding-top: 10%; }
+      padding-top: 10%;
+      font-size: 2em; }
   /* footer */
   .footer {
     height: 360px;
     padding-top: 5em; } }
 
 @media (min-width: 992px) {
-  .products .custard img {
+  .navbar-toggle, .navbar-collapse, .navbar-toggler-icon, .navbar-nav {
+    display: flex !important; }
+  a.navbar-brand {
+    transform: translateX(0%);
+    left: initial;
+    position: relative; }
+  /* start */
+  .row.home {
+    padding-bottom: 60px;
+    padding-top: 0; }
+  .home .headline {
+    height: auto; }
+    .home .headline h1 {
+      padding-top: 4em;
+      padding-left: .25em;
+      padding-right: .25em; }
+    .home .headline p {
+      text-align: center;
+      padding-left: 3em;
+      padding-right: 3em; }
+  .home .header-btns {
+    margin-top: 1em;
+    text-align: center; }
+    .home .header-btns .btn {
+      padding: 10px 20px;
+      min-width: 200px; }
+  .products .deco1 img {
     max-height: 800px;
     max-width: 800px; }
   .products .card-list {
@@ -315,7 +417,7 @@ a.navbar-brand {
     .home .headline p {
       font-size: 1.5em; }
   /* products */
-  .products .custard img {
+  .products .deco1 img {
     max-height: 800px;
     max-width: 800px; }
   .products .card-list {

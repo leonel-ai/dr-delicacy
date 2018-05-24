@@ -114,6 +114,8 @@ a.navbar-brand {
  }
 
 .home {
+  .desktop { display: none; }
+
   .headline {
     height: 600px;
     background: url('/public/morel.png') no-repeat center center;
@@ -121,8 +123,6 @@ a.navbar-brand {
 
     h1 {
       padding-top: 14em;
-      padding-left: .25em;
-      padding-right: .25em;
     }
 
     p {
@@ -155,7 +155,7 @@ a.navbar-brand {
     font-size: 3em;
   }
 
-  .custard {
+  .deco1 {
     display: none;
   }
 
@@ -172,10 +172,6 @@ a.navbar-brand {
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: ease-out 0.3s;
-
-    // &:hover {
-    //   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    // }
 
     img {
       padding-top: 2em;
@@ -226,7 +222,7 @@ a.navbar-brand {
     display: block;
     margin: auto;
     background-color: #fff;
-    width: 20aem;
+    width: 20em;
     height: 28em;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -311,76 +307,132 @@ a.navbar-brand {
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  body {
-    padding-top: 50px !important;
-  }
-
+  body {padding-top: 50px !important;}
   .fixed-top { position: fixed; }
-
   .carousel .slide { display: none; }
+  .container-fluid { overflow-x: hidden; }
 
   /* start */
   .row {
     padding-bottom: 50px;
+    h1 {
+      text-align: left;
+    }
   }
 
   .home {
-    .headline {
-      height: auto;
-      background: url('/public/shrooms.jpg') no-repeat center center;
+    padding-top: 0;
+
+    .desktop {
+      display: block;
+      background: url('/public/herp.png') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
       background-size: cover;
+      min-height: 400px;
+      width: 100%;
 
       h1 {
-        padding-top: 15%;
-        padding-left: 2em;
-        padding-right: 2em;
-        font-size: 2.5em;
+        padding-top: 30px;
+        padding-left: 20px;
+        padding-right: 0;
+        font-size: 32px;
+        line-height: 32px;
+        width: 200px;
       }
 
       p {
-        font-size: 1.2em;
+        font-size: 16px;
+        line-height: 32px;
+        padding-left: 20px;
+        width: 300px;
       }
+     }
+
+    .headline {
+      display: none;
+    }
+
+    .header-btns {
+      text-align: left;
     }
   }
 
   /* products */
+  .row.products {
+    padding-top: 2em;
+    padding-bottom: 3em; }
   .products {
-    height: 1022px;
-
+    overflow: hidden;
 
     h1 {
-      text-align: left;
       padding-left: 1em;
+      font-size: 2em;
+      padding-bottom: 1em;
     }
 
-    .custard {
-      padding-right: 0;
-      margin-right: -46px;
-      height: 140px;
-      background-color: white;
+    .deco1 {
+      display: block;
+      position: absolute;
+      z-index: -2;
+      left: 380px;
+      margin-top: 76%;
+      animation-duration: 24s;
+      animation-name: spin;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
 
       img {
-        border-radius: 50%;
-        width: 50%;
-        float: right;
+        width: 160px;
+      }
+    }
+    .deco2 {
+      display: block;
+      position: absolute;
+      z-index: -2;
+      left: -320px;
+      margin-top: 100px;
+      animation-duration: 30s;
+      animation-name: spin;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+
+      img {
+        width: 480px;
       }
     }
 
     .product-list {
-      position: absolute;
-      padding-top: 10em;
+      position: initial;
+      padding-top: 2em;
 
       p {
         max-width: 500px;
         padding-bottom: 2em;
       }
+
+      .carousel {
+        height: auto;
+      }
     }
 
-    .carousel { display: none; }
-
-    .card-list {
-      padding-bottom: 3em;
+    @keyframes spin {
+      from {transform:rotate(0deg);}
+      to {transform:rotate(360deg);}
     }
+    @-moz-keyframes spin {
+      from { -moz-transform: rotate(0deg); }
+      to { -moz-transform: rotate(360deg); }
+    }
+    @-webkit-keyframes spin {
+        from { -webkit-transform: rotate(0deg); }
+        to { -webkit-transform: rotate(360deg); }
+    }
+
+    // .carousel.slide, .carousel-inner {
+    //   margin: 0;
+    // }
 
     // .card {
     //   display: block;
@@ -417,12 +469,41 @@ a.navbar-brand {
   }
 
   /* story */
-  .story {
-    padding-top: 5em;
+  .row.story {
+    padding-top: 8em;
+    padding-bottom: 8em;
+
+    .main {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
 
     h1 {
       text-align: left;
       padding: 0 1em;
+    }
+
+    .card {
+      display: block;
+      margin: auto;
+      background-color: #fff;
+      width: 32em;
+      height: 29em;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      padding: 0;
+
+      h1 {
+        text-align: left;
+        padding-left: .7em;
+      }
+      p { padding: 1em;}
+
+      .chef-video {
+        padding-bottom: 2em;
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 
@@ -433,6 +514,7 @@ a.navbar-brand {
 
     h1 {
       padding-top: 10%;
+      font-size: 2em;
     }
   }
 
@@ -446,9 +528,56 @@ a.navbar-brand {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 
-  .products {
+  .navbar-toggle, .navbar-collapse, .navbar-toggler-icon, .navbar-nav {
+    display: flex !important;
+  }
 
-    .custard img {
+  a.navbar-brand {
+    transform: translateX(0%);
+    left: initial;
+    position: relative;
+  }
+
+    /* start */
+  .row.home {
+    padding-bottom: 60px;
+    padding-top: 0;
+  }
+
+  .home {
+    .headline {
+      height: auto;
+      // background: url('/public/morel.png') no-repeat center center;
+      // background-size: cover;
+
+      h1 {
+        padding-top: 4em;
+        padding-left: .25em;
+        padding-right: .25em;
+      }
+
+      p {
+        text-align: center;
+        padding-left: 3em;
+        padding-right: 3em;
+      }
+    }
+
+    .header-btns {
+      margin-top: 1em;
+      text-align: center;
+
+      .btn {
+        padding: 10px 20px;
+        min-width: 200px;
+      }
+    }
+  }
+
+
+
+  .products {
+    .deco1 img {
       max-height: 800px;
       max-width: 800px;
     }
@@ -501,7 +630,7 @@ a.navbar-brand {
    /* products */
    .products {
 
-    .custard img {
+    .deco1 img {
       max-height: 800px;
       max-width: 800px;
     }
